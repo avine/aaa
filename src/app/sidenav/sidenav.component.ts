@@ -1,14 +1,6 @@
-import {
-  Component,
-  contentChild,
-  signal,
-  ViewEncapsulation,
-} from '@angular/core';
-import {
-  SidenavContentDirective,
-  SidenavNavDirective,
-} from './sidenav.directive';
 import { NgTemplateOutlet } from '@angular/common';
+import { Component, contentChild, signal, ViewEncapsulation } from '@angular/core';
+import { SidenavContentDirective, SidenavNavDirective } from './sidenav.directive';
 
 @Component({
   selector: 'app-sidenav',

@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 320px minmax(0, 1fr);
   grid-template-rows: 1fr;
-  grid-template-areas: "nav content";
+  grid-template-areas: 'nav content';
 
   background-color: palegoldenrod;
 
@@ -34,7 +34,7 @@
   @media (width < 763px) {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: 1fr;
-    grid-template-areas: "content";
+    grid-template-areas: 'content';
 
     &__nav {
       //grid-area: content;
