@@ -1,0 +1,67 @@
+.app-sidenav {
+  min-height: 100%;
+
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "nav content";
+
+  background-color: palegoldenrod;
+
+  &__nav {
+    grid-area: nav;
+
+    position: sticky;
+    top: var(--header-height);
+    height: calc(100dvh - var(--header-height));
+    overflow: auto;
+
+    background-color: palegreen;
+    z-index: 3;
+  }
+
+  &__content {
+    grid-area: content;
+
+    position: relative;
+    z-index: 1;
+  }
+
+  &__backdrop {
+    display: none;
+  }
+
+  @media (width < 763px) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "content";
+
+    &__nav {
+      //grid-area: content;
+
+      position: fixed;
+      width: 320px;
+      max-width: 100%;
+
+      left: -320px;
+      transition: left ease 250ms;
+
+      &--open {
+        left: 0;
+      }
+    }
+
+    &__backdrop {
+      display: block;
+      position: fixed;
+      z-index: 2;
+
+      top: var(--header-height);
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      background-color: rgba($color: #000000, $alpha: 0.25);
+    }
+  }
+}

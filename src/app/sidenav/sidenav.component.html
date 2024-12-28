@@ -1,0 +1,15 @@
+@if (nav()?.templateRef; as template) {
+<aside class="app-sidenav__nav" [class.app-sidenav__nav--open]="sidenavOpen()">
+  <button (click)="toggleSidenavOpen()" style="position: sticky; top: 0px">
+    Toggle
+  </button>
+  <ng-container [ngTemplateOutlet]="template" />
+</aside>
+} @if (content()?.templateRef; as template) {
+<div class="app-sidenav__content">
+  <button (click)="toggleSidenavOpen()">Toggle</button>
+  <ng-container [ngTemplateOutlet]="template" />
+</div>
+} @if (sidenavOpen()) {
+<div class="app-sidenav__backdrop"></div>
+}
