@@ -1,5 +1,5 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, contentChild, signal, ViewEncapsulation } from '@angular/core';
+import { Component, contentChild, ElementRef, signal, viewChild, ViewEncapsulation } from '@angular/core';
 import { SidenavContentDirective, SidenavNavDirective } from './sidenav.directive';
 
 @Component({
@@ -19,5 +19,12 @@ export class SidenavComponent {
 
   protected toggleSidenavOpen() {
     this.sidenavOpen.update((v) => !v);
+  }
+
+  protected backdrop = viewChild<ElementRef<HTMLElement>>('backdrop');
+
+  protected onBackdropScroll(event: Event) {
+    console.log('OK');
+    event.stopPropagation();
   }
 }

@@ -13,5 +13,5 @@
 }
 
 @if (sidenavOpen()) {
-  <div class="app-sidenav__backdrop"></div>
+  <div class="app-sidenav__backdrop" #backdrop (scroll)="onBackdropScroll($event)"></div>
 }
